@@ -8,11 +8,11 @@ sentiment = sentiment_analysis.SentimentAnalysisSpanish()
 st.title('Coke.ai')
 st.title('Análisis de sentimiento ...')
 
-write_here = "Escriba un text aqui..."
+write_here = "Texto aqui..."
 text = st.text_area("Incluya un texto ..", write_here)
 if st.button("Analizar"):
-    result = sentiment.sentiment(text)
     if text != write_here:
+        result = sentiment.sentiment(text)
         st.success('Sentimiento de ['+ text + ']')
         st.success('%.5f' % result)
     else:
