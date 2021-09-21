@@ -3,8 +3,6 @@ from sentiment_analysis_spanish import sentiment_analysis
 import pandas as pd
 import streamlit as st
 import time
-from tqdm.notebook import tqdm
-tqdm.pandas()
 
 nlp = sentiment_analysis.SentimentAnalysisSpanish()
 
