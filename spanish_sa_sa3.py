@@ -10,7 +10,7 @@ nlp = sentiment_analysis.SentimentAnalysisSpanish()
 def main():
 
     st.title('Coke.ai')
-    st.title('Análisis de sentimiento ...')
+    st.title('Análisis de sentimiento usando sentiment_analysis_spanish')
 
     # text = st.text_input("Expresión:")
     write_here = "Texto aqui..."
@@ -81,7 +81,7 @@ def CheckForLess(list1, val):
     return False
 
 def sentimiento(text):
-    #try:
+    try:
         conditions = {
             1: 'Muy Malo',
             2: 'Malo',
@@ -92,8 +92,8 @@ def sentimiento(text):
         result = nlp.sentiment(text)
         label = conditions[CheckForLess([0.1, 0.2, 0.5, 0.8, 1],result)]
         return label, round(result,4)
-    #except:
-    #    return "_Error", -1
+    except:
+        return "_Error", -1
 
 @st.cache
 def convert_df(df):
